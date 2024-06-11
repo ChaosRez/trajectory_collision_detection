@@ -28,8 +28,8 @@ def predict_future_positions(aircraft, time_interval, num_steps):
     for step in range(num_steps):
         future_time = step * time_interval
         future_position = {
-            "latitude": aircraft["latitude"] + aircraft["speed"] * future_time * cos(aircraft["direction"]),
-            "longitude": aircraft["longitude"] + aircraft["speed"] * future_time * sin(aircraft["direction"]),
+            "latitude": aircraft["latitude"] + aircraft["speed"] * future_time * sin(radians(90 - aircraft["direction"])),
+            "longitude": aircraft["longitude"] + aircraft["speed"] * future_time * cos(radians(90 - aircraft["direction"])),
             "altitude": aircraft["altitude"] + aircraft["vertical_speed"] * future_time
         }
         positions.append(future_position)

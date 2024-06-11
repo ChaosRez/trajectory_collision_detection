@@ -19,3 +19,5 @@ aircraft_list = [
 detect_collisions(aircraft_list, time_interval=1, num_steps=10, horizontal_separation=5, vertical_separation=300)
 
 ```
+### Note
+According to compass rose, 0 degrees is North, 90 degrees is East, 180 degrees is South, and 270 degrees is West.
